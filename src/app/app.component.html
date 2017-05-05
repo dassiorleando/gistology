@@ -1,15 +1,71 @@
-<md-toolbar color="primary">
-    <span class="middle"><a href="/">{{title}}</a></span>
-    <span class="spacer"></span>
-    <button md-icon-button [mdMenuTriggerFor]="menu">
-      <md-icon>more_vert</md-icon>
-    </button>
-    <md-menu #menu="mdMenu">
-      <button md-menu-item>
-        <span>About</span>
+<div fxLayout="column" fxFlex>
+  <md-toolbar color="primary">
+      <span class="middle">{{title}}</span>
+      <span class="spacer"></span>
+      <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>more_vert</md-icon>
       </button>
-      <button md-menu-item>
-        <span>Contact</span>
-      </button>
-    </md-menu>
-</md-toolbar>
+      <md-menu #menu="mdMenu">
+        <button md-menu-item>
+          <span>About</span>
+        </button>
+        <button md-menu-item>
+          <span>Contact</span>
+        </button>
+      </md-menu>
+  </md-toolbar>
+
+  <!-- intro words -->
+  <div class="content" fxFlex>
+    <div [fxLayout]="row">
+      <div fxFlex="20"> </div>
+      <div fxFlex="60">
+        <md-card fxFlex="100">
+          <md-card-title>The Best Gists Ever Seen</md-card-title>
+
+          <md-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+              bred for hunting.
+            </p>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div fxFlex="20"> </div>
+    </div>
+  </div>
+
+  <!-- We list the last 5 saved gists -->
+  <div fxFlex="100">
+    <div fxFlex="30"> </div>
+    <div fxFlex="40">
+      <!-- three line densed list -->
+      <md-list dense>
+        <md-list-item *ngFor="let gist of gists">
+          <h3 md-line> <b>{{gist.title}}</b> </h3>
+          <p md-line> {{gist.description}} </p>
+          <p md-line> {{gist.technologies}} </p>
+        </md-list-item>
+      </md-list>
+    </div>
+    <div fxFlex="30"> </div>
+  </div>
+
+  <!-- The footer -->
+  <div class="footer" [fxLayout]="row">
+    <div fxFlex="35"> </div>
+    <div fxFlex="30">
+      <div fxFlex="100">
+        <div fxFlex="25"> </div>
+        <div fxFlex="10">
+          <md-icon>favorite</md-icon>
+        </div>
+        <div fxFlex="40">
+          By <a href="https://www.linkedin.com/in/dassi-orleando-257b04ab/">Dassi Orleando</a>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="35"> </div>
+  </div>
+</div>

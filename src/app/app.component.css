@@ -1,0 +1,11 @@
+.content{
+    margin: 5em auto;
+}
+
+md-card-title{
+    text-align: center;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+}
