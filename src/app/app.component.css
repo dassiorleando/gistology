@@ -1,5 +1,5 @@
 .content{
-    margin: 5em auto;
+    margin: 2em auto;
 }
 
 md-card-title{
@@ -7,5 +7,6 @@ md-card-title{
 }
 .footer{
     position: relative;
+    margin-top: 50px;
     bottom: 0;
 }
