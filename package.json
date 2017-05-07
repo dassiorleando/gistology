@@ -31,8 +31,8 @@
     "http-status": "^1.0.1",
     "mongoose": "^4.9.7",
     "rxjs": "^5.1.0",
-    "socket.io": "^1.7.3",
-    "socket.io-client": "^1.7.3",
+    "socket.io": "^1.7.4",
+    "socket.io-client": "^1.7.4",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
@@ -40,6 +40,7 @@
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
+    "@types/socket.io-client": "^1.4.29",
     "codelyzer": "~2.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
