@@ -1,0 +1,15 @@
+<md-card class="gist-show-width">
+  <md-card-content>
+    <div class="gist-show-form">
+        <p md-line><b>Title</b>: {{gist.title}} </p>
+        <p md-line><b>Description</b>: {{gist.description}} </p>
+        <p md-line><b>Technologies</b>:  {{gist.technologies}} </p>
+        <p md-line><b>Link</b>: <a [href]="gist.link">{{gist.link}}</a> </p>
+              
+      <div layout="row" layout-align="start center">
+          <button md-button (click)="deleteGist()"><md-icon>delete</md-icon></button>
+          <button md-button (click)="editGist()"><md-icon>edit</md-icon></button>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

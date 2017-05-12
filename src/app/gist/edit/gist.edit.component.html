@@ -1,0 +1,24 @@
+<md-card class="gist-add-width">
+  <md-card-content>
+    <div class="gist-add-form">
+        <h2 style="text-align: center;">Edit Gist</h2>
+        <md-input-container class="form-full-width">
+          <input mdInput [(ngModel)]="gist.title" name=title placeholder="Title">
+        </md-input-container>
+        <md-input-container class="form-full-width">
+          <input mdInput [(ngModel)]="gist.description" name="description" placeholder="Description">
+        </md-input-container>
+        <md-input-container class="form-full-width">
+          <input mdInput [(ngModel)]="gist.link" name="link" placeholder="Link">
+        </md-input-container>
+        <md-input-container class="form-full-width">
+          <input mdInput [(ngModel)]="gist.technologies" name="technologies" placeholder="Technologies">
+        </md-input-container>
+
+      <div layout="row" layout-align="start center">
+          <button md-button (click)="dialogRef.close()">Cancel</button>
+          <button md-raised-button (click)="editGist()">Edit</button>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

@@ -1,5 +1,5 @@
 import { GistShowComponent } from './gist/show/gist.show.component';
-import { GistAddComponent } from './gist/add/gist.add.component';
+import { GistEditComponent } from './gist/edit/gist.edit.component';
 import { GistListComponent } from './gist/list/gist.list.component';
 import { RouterModule } from '@angular/router';
 import { AppSocketIoService } from './app.socketIo.service';
@@ -22,7 +22,7 @@ import { GistComponent } from './gist/gist.component';
     AppComponent,
     GistComponent,
     GistListComponent,
-    GistAddComponent,
+    GistEditComponent,
     GistShowComponent
   ],
   imports: [
@@ -46,6 +46,12 @@ import { GistComponent } from './gist/gist.component';
   ],
   providers: [GistService, AppSocketIoService],
   bootstrap: [AppComponent],
-  entryComponents: [GistAddComponent, GistShowComponent]
+  entryComponents: [GistEditComponent, GistShowComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private appSocketIoService: AppSocketIoService){
+    // Consume events: Save and Update
+    this.appSocketIoService.consumeEvenOnGistSaved();   // Save event
+    this.appSocketIoService.consumeEvenOnGistUpdated(); // Update event
+  }
+ }

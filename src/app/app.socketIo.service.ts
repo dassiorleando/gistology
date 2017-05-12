@@ -36,7 +36,7 @@ export class AppSocketIoService {
     var self = this;
     this.socket.on('gistUpdated', function(gist: Gist){
       self.toasterService.pop('info', 'GIST UPDATED', 
-          'A gist with title ' + gist.title + ' has just been updated');
+          'A gist with title \"' + gist.title + '\" has just been updated');
     });
   }
 }

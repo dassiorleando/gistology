@@ -1,3 +1,4 @@
+import { AppSocketIoService } from '../app.socketIo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -22,7 +23,8 @@ export class GistComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }
