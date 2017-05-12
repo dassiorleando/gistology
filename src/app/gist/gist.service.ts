@@ -32,4 +32,9 @@ export class GistService {
       .map(res => res.json());
   }
 
+  // delete a gist
+  deleteGist(gistId){
+    return this.http.delete('/api/gist/' + gistId)
+      .map(res => res.json());
+  }
 }

@@ -24,7 +24,7 @@ router.get('/gist/:gistId', (req, res) => {
   });
 });
 
-/* POST: save a new gist */
+/* PUT: update a new gist */
 router.put('/gist', (req, res) => {
   var data = req.body;
   var id = data._id;
@@ -42,7 +42,7 @@ router.put('/gist', (req, res) => {
     if (err) return res.status(status.BAD_REQUEST).json(err);
 
     // The gist has been updated
-    res.status(status.OK).json(gist);
+    res.status(status.OK).json(gistToUpdate);
   });
 });
 
@@ -71,6 +71,19 @@ router.get('/gist', (req, res) => {
 
     // object of all the gists
     res.status(status.OK).json(gists);
+  });
+});
+
+/* DELETE: delete a gist by id */
+router.delete('/gist/:gistId', (req, res) => {
+  var gistId = req.params.gistId;
+
+  // find the gist by id and remove it
+  Gist.findByIdAndRemove(gistId, function(err) {
+    if (err) return res.status(status.BAD_REQUEST).json(err);
+
+    // The gist has been deleted
+    res.status(status.OK).json({message: 'SUCCESS'});
   });
 });
 
