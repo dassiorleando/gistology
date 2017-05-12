@@ -27,7 +27,7 @@ export class AppSocketIoService {
     var self = this;
     this.socket.on('gistSaved', function(gist: Gist){
       self.toasterService.pop('success', 'NEW GIST SAVED',
-          'A gist with title ' + gist.title + ' has just been shared' + ' with stack: ' + gist.technologies);
+          'A gist with title \"' + gist.title + '\" has just been shared' + ' with stack: ' + gist.technologies);
     });
   }
 

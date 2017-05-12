@@ -18,7 +18,7 @@ router.get('/gist/:gistId', (req, res) => {
   }
 
   Gist.findById(gistId, function(err, gistFounded) {
-    if (err) return res.status(err.status).json(err);
+    if (err) return res.status(status.BAD_REQUEST).json(err);
     // We serve as json the gist founded
     res.status(status.OK).json(gistFounded);
   });
@@ -39,7 +39,7 @@ router.put('/gist', (req, res) => {
 
   // find the gist with id :id
   Gist.findByIdAndUpdate(id, gistToUpdate, function(err, gist) {
-    if (err) return res.status(err.status).json(err);
+    if (err) return res.status(status.BAD_REQUEST).json(err);
 
     // The gist has been updated
     res.status(status.OK).json(gist);
@@ -59,7 +59,7 @@ router.post('/gist', (req, res) => {
 
   // save the gist
   newGist.save(function(err, gist) {
-    if (err) return res.status(err.status).json(err);
+    if (err) return res.status(status.BAD_REQUEST).json(err);
     res.status(status.OK).json(gist);
   });
 });
@@ -67,7 +67,7 @@ router.post('/gist', (req, res) => {
 /* GET all saved gists */
 router.get('/gist', (req, res) => {
   Gist.find({}, function(err, gists) {
-    if (err) return res.status(err.status).json(err);
+    if (err) return res.status(status.BAD_REQUEST).json(err);
 
     // object of all the gists
     res.status(status.OK).json(gists);

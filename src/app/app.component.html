@@ -1,3 +1,5 @@
+<toaster-container></toaster-container>
+
 <div fxLayout="column" fxFlex>
   <md-toolbar color="primary">
       <span class="middle">{{title}}</span>
@@ -36,21 +38,7 @@
     </div>
   </div>
 
-  <!-- We list the last 5 saved gists -->
-  <div fxFlex="100">
-    <div fxFlex="30"> </div>
-    <div fxFlex="40">
-      <!-- three line densed list -->
-      <md-list dense>
-        <md-list-item *ngFor="let gist of gists">
-          <h3 md-line> <b>{{gist.title}}</b> </h3>
-          <p md-line> {{gist.description}} </p>
-          <p md-line> {{gist.technologies}} </p>
-        </md-list-item>
-      </md-list>
-    </div>
-    <div fxFlex="30"> </div>
-  </div>
+  <router-outlet></router-outlet>
 
   <!-- The footer -->
   <div class="footer" [fxLayout]="row">

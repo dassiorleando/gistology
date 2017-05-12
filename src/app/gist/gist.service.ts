@@ -31,4 +31,5 @@ export class GistService {
     return this.http.put('/api/gist', gist)
       .map(res => res.json());
   }
+
 }
