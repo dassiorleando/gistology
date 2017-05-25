@@ -29,12 +29,18 @@ export class GistListComponent implements OnInit {
   /**
    * To add a new gist
   */
-  addGist(gist){
+  addGist(){
     var self = this;
     let config = new MdDialogConfig(); // config
-    config.data = gist || null; // Data to send to modal: gist to edit or empty
+    config.data = { // Data to send to modal: gist to edit or empty
+      _id: "",
+      title: "",
+      description: "",
+      technologies: [],
+      link: ""
+    };
 
-    let dialogRef = this.dialog.open(GistEditComponent);
+    let dialogRef = this.dialog.open(GistEditComponent, config);
     // After close the gist we take the register gist to add it to the list
     dialogRef.afterClosed().subscribe(result => {
       // Populate our list

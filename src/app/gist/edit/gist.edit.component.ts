@@ -18,19 +18,22 @@ export class GistEditComponent {
       title: "",
       description: "",
       technologies: [],
-      link: ""
+      link: "",
+      techs: ""
   };
 
   constructor(private gistService: GistService, 
   @Inject(MD_DIALOG_DATA) public data: any, private toasterService: ToasterService,
   public dialogRef: MdDialogRef<GistEditComponent>, private appSocketIoService: AppSocketIoService) {
     this.gist = data;
+    this.gist.techs = this.gist.technologies.join();
   }
 
   editGist(){
     var self = this;
     // Update or save the gist
     if(this.gist._id !== ""){
+      this.gist.technologies = this.gist.techs.split(",");
       // Update in case of an existing id
       self.gistService.updateGist(new Gist(this.gist._id, this.gist.title, this.gist.description, this.gist.technologies, this.gist.link)).subscribe(updatedGist => {
           if(updatedGist){
@@ -42,6 +45,7 @@ export class GistEditComponent {
           }
       });
     } else {
+      this.gist.technologies = this.gist.techs.split(",");
       // Save a new one when there is no id filled
       self.gistService.postGist(new Gist(null, this.gist.title, this.gist.description, this.gist.technologies, this.gist.link)).subscribe(savedGist => {
           if(savedGist){

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 var status = require('http-status');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/ngblood');
+mongoose.connect('mongodb://localhost/gistology');
 var Gist = require('../models/gist');
 
 
