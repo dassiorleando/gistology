@@ -36,7 +36,8 @@
     "socket.io-client": "^1.7.4",
     "zone.js": "^0.8.4",
     "@angular/cli": "1.0.1",
-    "@angular/compiler-cli": "^4.0.0"
+    "@angular/compiler-cli": "^4.0.0",
+    "@types/socket.io-client": "^1.4.29"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.38",

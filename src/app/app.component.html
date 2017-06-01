@@ -2,7 +2,7 @@
 
 <div fxLayout="column" fxFlex>
   <md-toolbar color="primary">
-      <span class="middle">{{title}}</span>
+      <span class="middle" routerLink="/" style="cursor: pointer;">{{title}}</span>
       <span class="spacer"></span>
       <button md-icon-button [mdMenuTriggerFor]="menu">
         <md-icon>more_vert</md-icon>
@@ -19,7 +19,7 @@
 
   <!-- intro words -->
   <div class="content" fxFlex>
-    <div [fxLayout]="row">
+    <div fxLayout="row">
       <div fxFlex="20"> </div>
       <div fxFlex="60">
         <md-card fxFlex="100">
@@ -41,19 +41,9 @@
   <router-outlet></router-outlet>
 
   <!-- The footer -->
-  <div class="footer" [fxLayout]="row">
-    <div fxFlex="35"> </div>
-    <div fxFlex="30">
-      <div fxFlex="100">
-        <div fxFlex="25"> </div>
-        <div fxFlex="10">
-          <md-icon>favorite</md-icon>
-        </div>
-        <div fxFlex="40">
-          By <a href="https://www.linkedin.com/in/dassi-orleando-257b04ab/">Dassi Orleando</a>
-        </div>
+  <div class="footer" fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex="100"  style="text-align: center !important;">
+         <md-icon style="position: relative !important; top: 8px;">favorite</md-icon> By <a href="https://www.linkedin.com/in/dassi-orleando-257b04ab/">Dassi Orleando</a>
       </div>
-    </div>
-    <div fxFlex="35"> </div>
   </div>
 </div>

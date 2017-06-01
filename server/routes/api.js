@@ -1,8 +1,12 @@
+var uristring =
+    process.env.MONGODB_URI ||
+    'mongodb://localhost/gistology';
+
 const express = require('express');
 const router = express.Router();
 var status = require('http-status');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/gistology');
+mongoose.connect(uristring);
 var Gist = require('../models/gist');
 
 
