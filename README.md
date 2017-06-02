@@ -13,8 +13,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Getting Started
 
-After get the source code, it is recommanded to read the full article on medium that describes at a glance what is in this repository:
-[Build a real time & MD app with Angular2, AngularCli, AngularMaterial2 & Socket.io](https://medium.com/@dassiorleando/cedf1dc02fec)
+After getting the source code, it is recommanded to read the full article on medium that describes at a glance this project:
+[Build a real time & MD app with Angular2, AngularCli, AngularMaterial2 & Socket.io](https://medium.com/@dassiorleando/build-real-time-app-with-mean2-angular-cli-and-socket-io-cedf1dc02fec)
 
 ## Features
 
@@ -23,7 +23,7 @@ After get the source code, it is recommanded to read the full article on medium 
 - Material Design
 - CRUD of gist via rest
 - Real time Notification using socket.io
-- 
+
 
 ### To DO
 - Some validations on UI and Server
