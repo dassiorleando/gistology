@@ -4,7 +4,7 @@ import { AppSocketIoService } from '../../app.socketIo.service';
 import { GistService } from '../gist.service';
 import { Component, Inject } from '@angular/core';
 
-import {MdDialog, MdDialogConfig, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-gist-edit',
@@ -22,9 +22,9 @@ export class GistEditComponent {
       techs: ""
   };
 
-  constructor(private gistService: GistService, 
-  @Inject(MD_DIALOG_DATA) public data: any, private toasterService: ToasterService,
-  public dialogRef: MdDialogRef<GistEditComponent>, private appSocketIoService: AppSocketIoService) {
+  constructor(private gistService: GistService,
+  @Inject(MAT_DIALOG_DATA) public data: any, private toasterService: ToasterService,
+  public dialogRef: MatDialogRef<GistEditComponent>, private appSocketIoService: AppSocketIoService) {
     this.gist = data;
     this.gist.techs = this.gist.technologies.join();
   }

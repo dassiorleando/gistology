@@ -6,7 +6,7 @@ import { AppSocketIoService } from '../../app.socketIo.service';
 import { GistService } from '../gist.service';
 import { Component, Inject } from '@angular/core';
 
-import {MdDialog, MdDialogConfig, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-gist-show',
@@ -14,8 +14,8 @@ import {MdDialog, MdDialogConfig, MdDialogRef, MD_DIALOG_DATA} from '@angular/ma
   styleUrls: ['../gist.component.css']
 })
 export class GistShowComponent {
-  constructor(private gistService: GistService, @Inject(MD_DIALOG_DATA) public gist: any, private toasterService: ToasterService,
-  public dialogRef: MdDialogRef<GistShowComponent>, private appSocketIoService: AppSocketIoService, private router: Router, private dialog: MdDialog) { }
+  constructor(private gistService: GistService, @Inject(MAT_DIALOG_DATA) public gist: any, private toasterService: ToasterService,
+  public dialogRef: MatDialogRef<GistShowComponent>, private appSocketIoService: AppSocketIoService, private router: Router, private dialog: MatDialog) { }
 
   deleteGist(){
     var gistId = this.gist._id;
@@ -33,7 +33,7 @@ export class GistShowComponent {
     this.dialogRef.close({deleted: false})
 
     // Open a new one to edit the current gist
-    let config = new MdDialogConfig(); // config
+    let config = new MatDialogConfig(); // config
     config.data = this.gist; // Data to send to modal: gist to edit
     let dialogRef = this.dialog.open(GistEditComponent, config);
   }

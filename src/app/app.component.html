@@ -1,21 +1,22 @@
 <toaster-container></toaster-container>
 
 <div fxLayout="column" fxFlex>
-  <md-toolbar color="primary">
+  <mat-toolbar color="primary">
       <span class="middle" routerLink="/" style="cursor: pointer;">{{title}}</span>
       <span class="spacer"></span>
-      <button md-icon-button [mdMenuTriggerFor]="menu">
-        <md-icon>more_vert</md-icon>
+
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
       </button>
-      <md-menu #menu="mdMenu">
+      <mat-menu>
         <button md-menu-item>
           <span>About</span>
         </button>
         <button md-menu-item>
           <span>Contact</span>
         </button>
-      </md-menu>
-  </md-toolbar>
+      </mat-menu>
+  </mat-toolbar>
 
   <!-- intro words -->
   <div class="content" fxFlex>
@@ -43,7 +44,7 @@
   <!-- The footer -->
   <div class="footer" fxLayout="row" fxLayoutAlign="center center">
       <div fxFlex="100"  style="text-align: center !important;">
-         <md-icon style="position: relative !important; top: 8px;">favorite</md-icon> By <a href="https://www.linkedin.com/in/dassi-orleando-257b04ab/">Dassi Orleando</a>
+         <mat-icon style="position: relative !important; top: 8px;">favorite</mat-icon> By <a href="https://www.linkedin.com/in/dassi-orleando-257b04ab/">Dassi Orleando</a>
       </div>
   </div>
 </div>

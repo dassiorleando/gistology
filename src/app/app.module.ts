@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+// import { MaterialModule } from '@angular/material';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
@@ -16,6 +16,9 @@ import {ToasterModule} from 'angular2-toaster';
 
 import { AppComponent } from './app.component';
 import { GistComponent } from './gist/gist.component';
+import { MatIconModule} from '@angular/material';
+import {MatDialogModule} from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -30,9 +33,11 @@ import { GistComponent } from './gist/gist.component';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    // MaterialModule,
     FlexLayoutModule,
     ToasterModule,
+    MatIconModule,
+    MatDialogModule,
     RouterModule.forRoot([
       {
         path: '', // Gist component

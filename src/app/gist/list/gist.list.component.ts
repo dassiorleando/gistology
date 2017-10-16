@@ -4,7 +4,7 @@ import { GistEditComponent } from '../edit/gist.edit.component';
 import { GistService } from '../gist.service';
 import { Component, OnInit } from '@angular/core';
 
-import {MdDialog, MdDialogConfig, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-gist-list',
@@ -15,7 +15,7 @@ export class GistListComponent implements OnInit {
   // List of gist previously saved
   public gists = [];
 
-  constructor(private gistService: GistService, private dialog: MdDialog) {
+  constructor(private gistService: GistService, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class GistListComponent implements OnInit {
   */
   addGist(){
     var self = this;
-    let config = new MdDialogConfig(); // config
+    let config = new MatDialogConfig(); // config
     config.data = { // Data to send to modal: gist to edit or empty
       _id: "",
       title: "",
@@ -58,7 +58,7 @@ export class GistListComponent implements OnInit {
     // Load a bist by his id
       this.gistService.getGistById(gistId)
         .subscribe(gist => {
-          let config = new MdDialogConfig(); // config
+          let config = new MatDialogConfig(); // config
           config.data = gist; // Data to send to modal: gist to show
           let dialogRef = this.dialog.open(GistShowComponent, config);
 
