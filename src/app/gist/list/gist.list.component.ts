@@ -4,7 +4,7 @@ import { GistEditComponent } from '../edit/gist.edit.component';
 import { GistService } from '../gist.service';
 import { Component, OnInit } from '@angular/core';
 
-import {MdDialog, MdDialogConfig, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-gist-list',
@@ -13,9 +13,9 @@ import {MdDialog, MdDialogConfig, MdDialogRef, MD_DIALOG_DATA} from '@angular/ma
 })
 export class GistListComponent implements OnInit {
   // List of gist previously saved
-  public gists = [];
+  public gists: any = [];
 
-  constructor(private gistService: GistService, private dialog: MdDialog) {
+  constructor(private gistService: GistService, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -23,28 +23,28 @@ export class GistListComponent implements OnInit {
       this.gistService.getAllGists()
         .subscribe(gists => {
             this.gists = gists;
-    });
+      });
   }
 
   /**
    * To add a new gist
   */
-  addGist(){
-    var self = this;
-    let config = new MdDialogConfig(); // config
+  addGist() {
+    const self = this;
+    const config = new MatDialogConfig(); // config
     config.data = { // Data to send to modal: gist to edit or empty
-      _id: "",
-      title: "",
-      description: "",
+      _id: '',
+      title: '',
+      description: '',
       technologies: [],
-      link: ""
+      link: ''
     };
 
-    let dialogRef = this.dialog.open(GistEditComponent, config);
+    const dialogRef = this.dialog.open(GistEditComponent, config);
     // After close the gist we take the register gist to add it to the list
     dialogRef.afterClosed().subscribe(result => {
       // Populate our list
-      if(result){
+      if (result) {
           self.gists.push(result);
       }
     });
@@ -53,22 +53,22 @@ export class GistListComponent implements OnInit {
   /**
    * To show a gist
    */
-  show(gistId){
-    var self = this;
+  show(gistId) {
+    const self = this;
     // Load a bist by his id
       this.gistService.getGistById(gistId)
         .subscribe(gist => {
-          let config = new MdDialogConfig(); // config
+          const config = new MatDialogConfig(); // config
           config.data = gist; // Data to send to modal: gist to show
-          let dialogRef = this.dialog.open(GistShowComponent, config);
+          const dialogRef = this.dialog.open(GistShowComponent, config);
 
           dialogRef.afterClosed().subscribe(result => {
             // Edit our list
-            if(result){
-              if(result.deleted){
-                for(var i = 0; i < self.gists.length; i++) {
-                    var gist = self.gists[i];
-                    if(gist._id == result.gistId) {
+            if (result) {
+              if (result.deleted) {
+                for (let i = 0; i < self.gists.length; i++) {
+                    const g = self.gists[i];
+                    if (g._id === result.gistId) {
                         self.gists.splice(i, 1);
                         break;
                     }

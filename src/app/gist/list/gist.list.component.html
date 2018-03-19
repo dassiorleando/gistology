@@ -4,22 +4,22 @@
     <div fxFlex="30"> </div>
     <div fxFlex="40">
       <!-- three line densed list -->
-      <md-list dense>
-        <md-list-item *ngFor="let gist of gists">
-          <h3 md-line> <b>{{gist.title}}</b> </h3>
-          <p md-line> {{gist.description}} </p>
-          <p md-line> {{gist.technologies}} </p>
+      <mat-list dense>
+        <mat-list-item *ngFor="let gist of gists">
+          <h3 matLine> <b>{{gist.title}}</b> </h3>
+          <p matLine> {{gist.description}} </p>
+          <p matLine> {{gist.technologies}} </p>
 
-          <button md-icon-button (click)="show(gist._id)">
-            <md-icon class="md-24">visibility</md-icon>
+          <button mat-icon-button (click)="show(gist._id)">
+            <mat-icon class="md-24">visibility</mat-icon>
           </button>
-        </md-list-item>
-      </md-list>
+        </mat-list-item>
+      </mat-list>
     </div>
     <div fxFlex="30"> </div>
   </div>
 
   <div fxLayout="row" fxLayoutAlign="center center">
-      <button md-fab (click)="addGist()"><md-icon>add</md-icon></button>
+      <button mat-fab (click)="addGist()"><mat-icon>add</mat-icon></button>
   </div>
 </div>

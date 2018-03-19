@@ -1,15 +1,15 @@
-<md-card class="gist-show-width">
-  <md-card-content>
+<mat-card class="gist-show-width">
+  <mat-card-content>
     <div class="gist-show-form">
-        <p md-line><b>Title</b>: {{gist.title}} </p>
-        <p md-line><b>Description</b>: {{gist.description}} </p>
-        <p md-line><b>Technologies</b>:  {{gist.technologies}} </p>
-        <p md-line><b>Link</b>: <a [href]="gist.link">{{gist.link}}</a> </p>
+        <p mat-line><b>Title</b>: {{gist.title}} </p>
+        <p mat-line><b>Description</b>: {{gist.description}} </p>
+        <p mat-line><b>Technologies</b>:  {{gist.technologies}} </p>
+        <p mat-line><b>Link</b>: <a [href]="gist.link">{{gist.link}}</a> </p>
               
       <div layout="row" layout-align="start center">
-          <button md-button (click)="deleteGist()"><md-icon>delete</md-icon></button>
-          <button md-button (click)="editGist()"><md-icon>edit</md-icon></button>
+          <button mat-button (click)="deleteGist()"><mat-icon>delete</mat-icon></button>
+          <button mat-button (click)="editGist()"><mat-icon>edit</mat-icon></button>
       </div>
     </div>
-  </md-card-content>
-</md-card>
+  </mat-card-content>
+</mat-card>

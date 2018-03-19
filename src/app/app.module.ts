@@ -6,13 +6,23 @@ import { AppSocketIoService } from './app.socketIo.service';
 import { GistService } from './gist/gist.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
+import {MatDialogModule} from '@angular/material/dialog';
+
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
-import {FlexLayoutModule} from "@angular/flex-layout";
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
-import {ToasterModule} from 'angular2-toaster';
+import { ToasterModule } from 'angular2-toaster';
 
 import { AppComponent } from './app.component';
 import { GistComponent } from './gist/gist.component';
@@ -27,11 +37,18 @@ import { GistComponent } from './gist/gist.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    FormsModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatToolbarModule,
     FlexLayoutModule,
+    MatListModule,
     ToasterModule,
     RouterModule.forRoot([
       {
@@ -49,7 +66,7 @@ import { GistComponent } from './gist/gist.component';
   entryComponents: [GistEditComponent, GistShowComponent]
 })
 export class AppModule {
-  constructor(private appSocketIoService: AppSocketIoService){
+  constructor(private appSocketIoService: AppSocketIoService) {
     // Consume events: Save and Update
     this.appSocketIoService.consumeEvenOnGistSaved();   // Save event
     this.appSocketIoService.consumeEvenOnGistUpdated(); // Update event

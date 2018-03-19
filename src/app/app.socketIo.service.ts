@@ -13,29 +13,29 @@ export class AppSocketIoService {
   }
 
   // Emit: gist saved event
-  emitEventOnGistSaved(gistSaved){
+  emitEventOnGistSaved(gistSaved) {
       this.socket.emit('gistSaved', gistSaved);
   }
 
   // Emit: gist updated event
-  emitEventOnGistUpdated(gistUpdated){
+  emitEventOnGistUpdated(gistUpdated) {
     this.socket.emit('gistUpdated', gistUpdated);
   }
 
-  // Consume: on gist saved 
-  consumeEvenOnGistSaved(){
-    var self = this;
-    this.socket.on('gistSaved', function(gist: Gist){
+  // Consume: on gist saved
+  consumeEvenOnGistSaved() {
+    const self = this;
+    this.socket.on('gistSaved', function(gist: Gist) {
       self.toasterService.pop('success', 'NEW GIST SAVED',
           'A gist with title \"' + gist.title + '\" has just been shared' + ' with stack: ' + gist.technologies);
     });
   }
 
-  // Consume on gist updated 
-  consumeEvenOnGistUpdated(){
-    var self = this;
-    this.socket.on('gistUpdated', function(gist: Gist){
-      self.toasterService.pop('info', 'GIST UPDATED', 
+  // Consume on gist updated
+  consumeEvenOnGistUpdated() {
+    const self = this;
+    this.socket.on('gistUpdated', function(gist: Gist) {
+      self.toasterService.pop('info', 'GIST UPDATED',
           'A gist with title \"' + gist.title + '\" has just been updated');
     });
   }
