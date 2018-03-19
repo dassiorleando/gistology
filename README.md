@@ -1,11 +1,11 @@
 # Gistology
 
 An app to record the best gists that make life easier.
-A starter app using **MEAN2** + **Socket.io**
+A starter app using **MEAN, Angular 5, Angular-Material & Socket.io**.
 
 https://gistology.herokuapp.com
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1 and updated to use 1.6.7.
 
 ## Demo
 - [Link](https://gistology.herokuapp.com)
@@ -26,16 +26,17 @@ After getting the source code, it is recommanded to read the full article on med
 
 
 ### To DO
+- ~~Update the stack~~
 - Some validations on UI and Server
 - CRUD of gist using socket.io
 - Write tests
-- Update angular-cli generator to allow to generate a crud using socket.io
+- Authentication & authorization
 - Setup **continuous integration build** and **semantic release**
 
 ## Installing
 
 1. git clone https://github.com/dassiorleando/gistology
-2. Be sure your node and npm version is compatible, there is used: node(6.10.2) & npm(4.5.0)
+2. Be sure your node and npm version is compatible, there is used: node(>= 8.9.0) & npm(>= 5.5.1)
 3. ```npm install```
 4. Install mongod and run it
 5. ```ng build``` & ```ng serve```(frontend work): Livereload will be enable here for front
@@ -56,7 +57,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
 
 ## Built With
-- MEAN(Angular2)
+- MEAN(Angular5)
 - AngularCli
 - Typescript
 - Socket.io
@@ -70,11 +71,12 @@ Run `ng generate component component-name` to generate a new component. You can 
 We accept pull requests :)
 No contributing guide published yet
 
-## Versioning
-0.5.0
+## [Versioning](https://github.com/dassiorleando/gistology/releases)
+- The initial version with Angular2: 0.0.1
+- Current version: Angular5
 
 ## Authors
-- [Dassi Orleando](https://github.com/dassiorleando) - Initial work
+- [Dassi Orleando](https://github.com/dassiorleando) - Main developer
 
 See also the list of [contributors](https://github.com/dassiorleando/gistology/contributors) who participated in this project.
 
