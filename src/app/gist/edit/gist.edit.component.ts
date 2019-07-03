@@ -6,6 +6,10 @@ import { Component, Inject } from '@angular/core';
 
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
+/**
+ * Save/update a gist
+ * @author dassiorleando
+ */
 @Component({
   selector: 'app-gist-edit',
   templateUrl: './gist.edit.component.html',

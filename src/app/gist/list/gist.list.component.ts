@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
+/**
+ * Listing all the gists ever saved
+ * @author dassiorleando
+ */
 @Component({
   selector: 'app-gist-list',
   templateUrl: './gist.list.component.html',

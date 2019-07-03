@@ -2,14 +2,19 @@ import { Injectable } from '@angular/core';
 import {Gist} from './gist/gist.model';
 import * as io from 'socket.io-client';
 import {ToasterService} from 'angular2-toaster';
+import { environment } from 'environments/environment';
 
+/**
+ * @author dassiorleando
+ */
 @Injectable()
 export class AppSocketIoService {
-  private socket: SocketIOClient.Socket; // The client instance of socket.io
+  API = environment.serverUrl;            // The server/API url
+  private socket: SocketIOClient.Socket;  // The client instance of socket.io
 
   // Constructor with an injection of ToastService
   constructor(private toasterService: ToasterService) {
-    this.socket = io();
+    this.socket = io(this.API);
   }
 
   // Emit: gist saved event

@@ -8,6 +8,10 @@ import { Component, Inject } from '@angular/core';
 
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
+/**
+ * Show a single gist & allow deletion
+ * @author dassiorleando
+ */
 @Component({
   selector: 'app-gist-show',
   templateUrl: './gist.show.component.html',

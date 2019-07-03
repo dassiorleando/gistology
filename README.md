@@ -39,9 +39,9 @@ After getting the source code, it is recommanded to read the full article on med
 2. Be sure your node and npm version is compatible, there is used: node(>= 8.9.0) & npm(>= 5.5.1)
 3. ```npm install```
 4. Install mongod and run it
-5. ```ng build``` & ```ng serve```(frontend work): Livereload will be enable here for front
-6. ```ng build``` & ```node index.js```(frontend + backend work)
-7. For frontend work  access the app at `http://localhost:4200` and for B and F, go here: `http://localhost:3000`
+5. ```ng serve``` to fire the frontend app, the Livereload will be enable as well
+6. ```node index.js``` to run the backend, it's possible to do ```ng build``` if you want both to work with the same backend port
+7. Access the frontend at `http://localhost:4200` and the Backend `http://localhost:3000`
 
 ## Running unit tests
 
