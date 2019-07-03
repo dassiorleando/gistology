@@ -1,15 +1,25 @@
+/**
+ * NodeJS entry file to initialize the App
+ * @author dassiorleando
+ */
 // Get dependencies
-const express = require('express');
-const path = require('path');
-const http = require('http');
-const bodyParser = require('body-parser');
-// Get gist route
-const api = require('./server/routes/api');
-const app = express();
+var express = require('express'),
+  path = require('path'),
+  http = require('http'),
+  cors = require('cors'),
+  bodyParser = require('body-parser'),
+
+  // Get gist route
+  api = require('./server/routes/api'),
+  app = express();
+
+// Enable CORS for all routes
+app.use(cors());
+
 /**
  * Create HTTP server.
  */
-const server = http.createServer(app);
+var server = http.createServer(app);
 // Socket.io for real time communication
 var io = require('socket.io').listen(server);
 

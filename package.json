@@ -31,6 +31,7 @@
     "angular2-toaster": "^3.0.1",
     "body-parser": "^1.17.1",
     "core-js": "2.5.3",
+    "cors": "^2.8.5",
     "express": "^4.15.2",
     "hammerjs": "^2.0.8",
     "http-status": "^1.0.1",
