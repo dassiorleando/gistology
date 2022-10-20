@@ -35,7 +35,7 @@
     "express": "^4.15.2",
     "hammerjs": "^2.0.8",
     "http-status": "^1.0.1",
-    "mongoose": "^4.9.7",
+    "mongoose": "^4.13.21",
     "rxjs": "5.5.6",
     "socket.io": "^1.7.4",
     "socket.io-client": "^1.7.4",
